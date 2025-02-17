@@ -15,6 +15,12 @@ angular.module("phoneList").component("phoneList", {
       self.query = savedState.query;
       self.orderProp = savedState.orderProp;
 
+      self.reset = function () {
+        //PhoneState.resetState();
+        self.query = "";
+        self.orderProp = "name";
+      };
+
       self.$onDestroy = function () {
         PhoneState.saveState(self.query, self.orderProp);
       };
