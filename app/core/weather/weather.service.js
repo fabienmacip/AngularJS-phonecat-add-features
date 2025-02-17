@@ -4,7 +4,6 @@ angular.module("core.weather", []).factory("Weather", [
   "$http",
   "$q",
   function ($http, $q) {
-    // Define the function before using it
     function getWeatherIcon(code, isDay) {
       // WMO Weather interpretation codes (WW)
       // https://open-meteo.com/en/docs

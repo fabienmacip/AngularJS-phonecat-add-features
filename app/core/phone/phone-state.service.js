@@ -3,7 +3,7 @@
 angular.module("core.phoneState", []).factory("PhoneState", function () {
   var state = {
     query: "",
-    orderProp: "age", // default value
+    orderProp: "age",
   };
 
   return {
