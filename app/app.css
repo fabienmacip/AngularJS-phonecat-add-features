@@ -100,3 +100,12 @@ h1 {
   background: #f8f9fa;
   border: 1px solid #dee2e6;
 }
+
+.weather-card .weather-card-weather {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.weather-card .card-body {
+  padding: 0 10px;
+}

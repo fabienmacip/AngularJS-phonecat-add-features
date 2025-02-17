@@ -1,0 +1,41 @@
+<div class="weather-card">
+  <div class="alert alert-warning" ng-if="$ctrl.weatherError">
+    <i class="bi bi-exclamation-triangle"></i>
+    {{$ctrl.weatherError}}
+  </div>
+
+  <div class="card" ng-if="$ctrl.weather">
+    <div class="card-header bg-primary text-white weather-card-weather">
+      <h5 class="mb-0 text-center">
+        <i class="bi bi-{{$ctrl.weather.icon}}"></i>
+        Current Weather
+      </h5>
+    </div>
+    <div class="card-body">
+      <div class="weather-info">
+        <p>
+          <small>
+            Latitude : {{$ctrl.weather.latitude | number:4}}°<br />
+            Longitude : {{$ctrl.weather.longitude | number:4}}°
+          </small>
+        </p>
+        <p class="temperature">
+          <i class="bi bi-thermometer-half"></i>
+          Temperature: {{$ctrl.weather.temperature_2m}}°C
+        </p>
+        <p>
+          <i class="bi bi-wind"></i>
+          Wind: {{$ctrl.weather.windspeed_10m}} km/h
+        </p>
+        <p>
+          <i class="bi bi-droplet"></i>
+          Humidity: {{$ctrl.weather.relative_humidity_2m}}%
+        </p>
+        <p>
+          <i class="bi bi-cloud-rain"></i>
+          Precipitation: {{$ctrl.weather.precipitation}} mm
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
