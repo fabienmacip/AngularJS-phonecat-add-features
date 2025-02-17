@@ -1,7 +1,16 @@
+<div>
+  <a href="#!/phones" class="text-info">
+    <i class="bi bi-arrow-left text-info">&nbsp; Back to phones-list</i>
+  </a>
+</div>
+
 <div class="phone-images">
-  <img ng-src="{{img}}" class="phone"
-      ng-class="{selected: img === $ctrl.mainImageUrl}"
-      ng-repeat="img in $ctrl.phone.images" />
+  <img
+    ng-src="{{img}}"
+    class="phone"
+    ng-class="{selected: img === $ctrl.mainImageUrl}"
+    ng-repeat="img in $ctrl.phone.images"
+  />
 </div>
 
 <h1>{{$ctrl.phone.name}}</h1>
@@ -19,7 +28,9 @@
     <span>Availability and Networks</span>
     <dl>
       <dt>Availability</dt>
-      <dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}</dd>
+      <dd ng-repeat="availability in $ctrl.phone.availability">
+        {{availability}}
+      </dd>
     </dl>
   </li>
   <li>
