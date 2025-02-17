@@ -6,11 +6,14 @@ angular.module("phoneList").component("phoneList", {
   controller: [
     "Phone",
     "PhoneState",
-    function PhoneListController(Phone, PhoneState) {
+    "Weather",
+    function PhoneListController(Phone, PhoneState, Weather) {
       var self = this;
       self.phones = Phone.query();
+      self.orderProp = "age";
+      self.weather = null;
+      self.weatherError = null;
 
-      //this.orderProp = "age";
       var savedState = PhoneState.getState();
       self.query = savedState.query;
       self.orderProp = savedState.orderProp;
@@ -18,12 +21,20 @@ angular.module("phoneList").component("phoneList", {
       self.reset = function () {
         //PhoneState.resetState();
         self.query = "";
-        self.orderProp = "name";
+        self.orderProp = "age";
       };
 
       self.$onDestroy = function () {
         PhoneState.saveState(self.query, self.orderProp);
       };
+
+      Weather.getCurrentWeather()
+        .then(function (data) {
+          self.weather = data;
+        })
+        .catch(function (error) {
+          self.weatherError = error;
+        });
     },
   ],
 });

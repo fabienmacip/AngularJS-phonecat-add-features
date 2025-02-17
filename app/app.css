@@ -91,3 +91,12 @@ h1 {
   font-size: 1.2em;
   font-weight: bold;
 }
+
+.weather-card {
+  margin-top: 30px;
+}
+
+.weather-card .card {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+}

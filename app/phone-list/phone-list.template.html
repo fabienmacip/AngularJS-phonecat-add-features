@@ -21,6 +21,27 @@
       </p>
 
       <button ng-click="$ctrl.reset()">Reset</button>
+      <div class="weather-card">
+        <div class="alert alert-warning" ng-if="$ctrl.weatherError">
+          <i class="bi bi-exclamation-triangle"></i>
+          {{$ctrl.weatherError}}
+        </div>
+        <div
+          class="card"
+          ng-if="$ctrl.weather"
+          style="
+            max-width: 200px;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h4>Today's Weather</h4>
+          <div>Temperature: {{$ctrl.weather.temperature_2m}}°C</div>
+          <div>Wind Speed: {{$ctrl.weather.windspeed_10m}} km/h</div>
+        </div>
+      </div>
     </div>
     <div class="col-md-10">
       <!--Body content-->
